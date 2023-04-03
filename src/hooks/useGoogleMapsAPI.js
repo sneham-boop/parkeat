@@ -6,7 +6,6 @@ export default function useGoogleMapsAPI() {
     return Promise.all([axios.get("/api/googlemapsapikey")])
       .then((response) => {
         const { key } = response[0].data;
-        console.log("Key in the hook", key);
         return key;
       })
       .catch((error) => {
