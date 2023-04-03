@@ -1,5 +1,5 @@
 export default function Homepage() {
-  const user  = { firstname: "Sneha", lastname: "Mahajan"};
+  const user = { firstname: "Sneha", lastname: "Mahajan" };
   return (
     <section className="home">
       {user ? (
