@@ -2,9 +2,7 @@ import Button from "../Button";
 import Logo from "./Logo";
 import Link from "next/link";
 
-
 export default function Header(props) {
-
   return (
     <nav className="nav">
       <Link href="/">
@@ -17,7 +15,7 @@ export default function Header(props) {
         <Link href="/">
           <Button btnText={"Map"} />
         </Link>
-        <Button btnText={btnText} onClick={handleClick} />
+        {/* <Button btnText={btnText} onClick={handleClick} /> */}
       </div>
     </nav>
   );
