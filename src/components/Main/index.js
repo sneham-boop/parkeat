@@ -1,3 +1,4 @@
+import BackgroundVideo from "../BackgroundVideo";
 import Footer from "../Footer";
 import Header from "../Header";
 
@@ -7,6 +8,7 @@ export default function Main({ children }) {
       <Header />
       {children}
       <Footer />
+      <BackgroundVideo/>
     </>
   );
 }
