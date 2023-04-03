@@ -12,8 +12,8 @@ export default function Header(props) {
         <Link href="/">
           <Button btnText={"Home"} />
         </Link>
-        <Link href="/">
-          <Button btnText={"Map"} />
+        <Link href="/places">
+          <Button btnText={"Places"} />
         </Link>
         {/* <Button btnText={btnText} onClick={handleClick} /> */}
       </div>
