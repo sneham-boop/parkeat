@@ -30,7 +30,7 @@ export default function GoogleMap(props) {
     return function cleanup() {
       getCurrentLocation();
     };
-  }, []);
+  });
 
   // Maps api  key setting
   useEffect(() => {
@@ -38,7 +38,7 @@ export default function GoogleMap(props) {
     .then((key)=>{
       setKey(key);
     });    
-  }, []);
+  });
 
   const handleApiLoaded = (map, maps) => {
     setMapAPILoaded(true);
