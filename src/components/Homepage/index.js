@@ -1,12 +1,14 @@
+import styles from './Homepage.module.scss'
+
 export default function Homepage() {
   const user = { firstname: "Sneha", lastname: "Mahajan" };
   return (
-    <section className="home">
+    <section className={styles.home}>
       <h2>You are in home</h2>
       {user ? (
         <h3>Welcome, {user.firstname}!</h3>
       ) : (
-        <div className="intro">
+        <div className={styles.intro}>
           <h3>Welcome to Park&EAT.</h3>
           <p>Please log in to continue.</p>
         </div>
