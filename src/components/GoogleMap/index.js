@@ -32,7 +32,7 @@ export default function GoogleMap(props) {
     };
   });
 
-  // Maps api  key setting
+  // Maps api key setting
   useEffect(() => {
     getAPIKey()
     .then((key)=>{
