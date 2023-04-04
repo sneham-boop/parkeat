@@ -1,14 +1,15 @@
 import Button from "../Button";
 import Logo from "./Logo";
 import Link from "next/link";
+import styles from "./Header.module.scss";
 
 export default function Header(props) {
   return (
-    <nav className="nav">
+    <nav className={styles.nav}>
       <Link href="/">
         <Logo />
       </Link>
-      <div className="nav-right-group">
+      <div className={styles['nav-right-group']}>
         <Link href="/">
           <Button btnText={"Home"} />
         </Link>
