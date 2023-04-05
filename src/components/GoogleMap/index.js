@@ -72,7 +72,15 @@ export default function GoogleMap(props) {
   return (
     <div className={styles.mapContainer}>
       <h2>Restaurants near you</h2>
-      <div id={styles.map} style={{ width: "80vw", height: "50vh" }}>
+      <div
+        id={styles.map}
+        style={{
+          width: "80vw",
+          height: "50vh",
+          borderRadius: "1.5rem",
+          overflow: "hidden",
+        }}
+      >
         {key && (
           <GoogleMapReact
             bootstrapURLKeys={{
