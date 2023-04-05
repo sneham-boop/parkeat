@@ -10,6 +10,21 @@ export default function GoogleMap(props) {
   const { getAPIKey } = useGoogleMapsAPI();
   const [key, setKey] = useState(null);
 
+  // Show restaurants if they exist
+  const { restaurants } = props;
+  const showPlaces = (places) => {
+    const placesArray = Object.values(places);
+    return placesArray.map((place, id) => (
+      <Markers
+        key={id}
+        id={id}
+        name={place.name}
+        description="Restaurant"
+        lat={place.geometry.location.lat}
+        lng={place.geometry.location.lng}
+      />
+    ));
+  };
   const defaultLocation = { lat: 43.6532, lng: -79.3832 };
   const [location, setLocation] = useState(
     getLocalStorage("location") || defaultLocation
@@ -77,6 +92,7 @@ export default function GoogleMap(props) {
               id="Me"
               description="You are here!"
             />
+            {restaurants && showPlaces(restaurants)}
           </GoogleMapReact>
         )}
       </div>

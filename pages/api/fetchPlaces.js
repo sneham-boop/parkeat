@@ -8,9 +8,9 @@ export default async (req, res) => {
 
   try {
     const response = await fetch(url);
-    const data = await response.json();
+    const { results } = await response.json();
     // console.log("Here's the data you received from Google Maps", data);
-    res.json(data);
+    res.json({places: results});
   } catch (e) {
     console.error(
       "We couldn't find the places on google maps that you were looking for.",
