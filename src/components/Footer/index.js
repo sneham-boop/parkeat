@@ -1,4 +1,5 @@
 import Button from "../Button";
+import styles from "./Footer.module.scss";
 
 export default function Footer() {
   const btnText = "GO UP";
@@ -10,7 +11,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer className={styles.footer}>
       <Button btnText={btnText} onClick={() => handleScroll()} />
     </footer>
   );
