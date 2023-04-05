@@ -4,7 +4,6 @@ export default function Homepage() {
   // const user = { firstname: "Sneha", lastname: "Mahajan" };
   return (
     <section className={styles.home}>
-      <h2>You are in home</h2>
       {/* {user ? (
         <h3>Welcome, {user.firstname}!</h3>
       ) : ( */}

@@ -1,5 +1,8 @@
+import styles from "./Header.module.scss";
+
 function Logo() {
-  return <div className="logo">PARK & EAT</div>;
+  // console.log(styles);
+  return <div className={styles.logo}>PARK & EAT</div>;
 }
 
 export default Logo;

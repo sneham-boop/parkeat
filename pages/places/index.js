@@ -3,7 +3,7 @@ import clientPromise from "../../lib/mongodb";
 
 export default function places(props) {
   const { listings } = props;
-  console.log(listings);
+  // console.log(listings);
   return (
     <section className="places">
       <h2>You are in places</h2>
