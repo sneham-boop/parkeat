@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import useGoogleMapsAPI from "../../hooks/useGoogleMapsAPI";
+import Markers from "./Markers";
 import styles from "./GoogleMap.module.scss";
 
 export default function GoogleMap(props) {
@@ -69,7 +70,14 @@ export default function GoogleMap(props) {
             yesIWantToUseGoogleMapApiInternals
             // onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
             {...props}
-          ></GoogleMapReact>
+          >
+            <Markers
+              lat={location.lat}
+              lng={location.lng}
+              id="Me"
+              description="You are here!"
+            />
+          </GoogleMapReact>
         )}
       </div>
     </div>
