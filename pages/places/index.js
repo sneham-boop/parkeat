@@ -1,12 +1,14 @@
 import GoogleMap from "@component/src/components/GoogleMap";
+import ShowPlaces from "@component/src/components/ShowPlaces";
 // import clientPromise from "../../lib/mongodb";
 
 export default function places(props) {
   const { restaurants } = props;
-  console.log(restaurants);
+  // console.log(restaurants);
   return (
     <section className="places">
       <GoogleMap restaurants={restaurants} />
+      <ShowPlaces places={restaurants}/>
     </section>
   );
 }
