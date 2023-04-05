@@ -6,7 +6,6 @@ export default function places(props) {
   // console.log(listings);
   return (
     <section className="places">
-      <h2>You are in places</h2>
       <GoogleMap />
     </section>
   );
