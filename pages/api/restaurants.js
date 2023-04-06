@@ -7,10 +7,10 @@ export default async (req, res) => {
       res.json({ error: "Could not connect to database." });
       return;
     }
-    const db = client.db("sample_airbnb");
+    const db = client.db("parkeat_db");
 
     const listings = await db
-      .collection("listingsAndReviews")
+      .collection("restaurants")
       .find({})
       .limit(10)
       .toArray();
