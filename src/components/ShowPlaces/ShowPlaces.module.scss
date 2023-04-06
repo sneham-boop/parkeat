@@ -14,16 +14,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  gap: 2em;
   .place {
-    width: 50%;
+    width: 40rem;
+    height: 13rem;
     padding: 1em;
     border-radius: 0.275rem;
-    border: 1px solid;
-    background-color: #FFF;
+    // border: 1px solid;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2em;
+    font-size: $font-size-p-m;
+    font-weight: $extra-thin;
     .place-image {
-      width: 100%;
+      width: 30%;
       height: auto;
+    }
+    div {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      // justify-content: flex-start;
+      align-items: flex-start;
+      gap: 0.2em;
     }
   }
 }
