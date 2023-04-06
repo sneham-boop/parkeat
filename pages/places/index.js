@@ -31,28 +31,4 @@ export async function getServerSideProps() {
   } catch (error) {
     console.error("We couldn't find places for you.", error);
   }
-
-  // // Get data from the database
-  // try {
-  //   const client = await clientPromise;
-  //   if (!client) {
-  //     res.json({ error: "Could not connect to database." });
-  //     return;
-  //   }
-  //   const db = client.db("sample_airbnb");
-
-  //   const listings = await db
-  //     .collection("listingsAndReviews")
-  //     .find({})
-  //     .limit(10)
-  //     .toArray();
-  //   // console.log(listings);
-  //   return {
-  //     props: {
-  //       listings: JSON.parse(JSON.stringify(listings)),
-  //     },
-  //   };
-  // } catch (e) {
-  //   console.error("We couldn't connect to the database.", e);
-  // }
 }

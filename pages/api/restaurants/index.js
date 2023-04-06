@@ -38,13 +38,13 @@ export default async function handler(req, res) {
       }
       const db = client.db("parkeat_db");
 
-      const listings = await db
+      const restaurants = await db
         .collection("restaurants")
         .find({})
         .limit(10)
         .toArray();
 
-      res.json(listings);
+      res.json(restaurants);
     } catch (e) {
       console.error("We couldn't connect to the database.", e);
     }
