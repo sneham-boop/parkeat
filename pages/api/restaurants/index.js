@@ -1,15 +1,17 @@
 import clientPromise from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
-  if (req.method === "POST") {
+  try {
+    // Connect to db
+    const client = await clientPromise;
+    if (!client) {
+      res.json({ error: "Could not connect to database." });
+      return;
+    }
+    const db = client.db("parkeat_db");
+
     // Process a POST request
-    try {
-      const client = await clientPromise;
-      if (!client) {
-        res.json({ error: "Could not connect to database." });
-        return;
-      }
-      const db = client.db("parkeat_db");
+    if (req.method === "POST") {
       const restaurant = {
         name: "Advait's Burgers",
         description: "Best burgers in town. Definitely not made of beans.",
@@ -25,19 +27,9 @@ export default async function handler(req, res) {
         res.json({
           message: `Failed to add new restaurant.`,
         });
-    } catch (e) {
-      console.error("We couldn't connect to the database.", e);
     }
-  } else {
-      // Process a GET request
-    try {
-      const client = await clientPromise;
-      if (!client) {
-        res.json({ error: "Could not connect to database." });
-        return;
-      }
-      const db = client.db("parkeat_db");
-
+    // Process a POST request
+    if (req.method === "GET") {
       const restaurants = await db
         .collection("restaurants")
         .find({})
@@ -45,8 +37,8 @@ export default async function handler(req, res) {
         .toArray();
 
       res.json(restaurants);
-    } catch (e) {
-      console.error("We couldn't connect to the database.", e);
     }
+  } catch (e) {
+    console.error("We couldn't connect to the database.", e);
   }
 }
