@@ -2,6 +2,7 @@ import clientPromise from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
   try {
+
     // Connect to db
     const client = await clientPromise;
     if (!client) {
@@ -28,6 +29,7 @@ export default async function handler(req, res) {
           message: `Failed to add new restaurant.`,
         });
     }
+    
     // Process a POST request
     if (req.method === "GET") {
       const restaurants = await db
