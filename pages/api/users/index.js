@@ -2,7 +2,6 @@ import clientPromise from "../../../lib/mongodb";
 
 export default async function handler(req, res) {
   try {
-
     // Connect to db
     const client = await clientPromise;
     if (!client) {
@@ -13,33 +12,33 @@ export default async function handler(req, res) {
 
     // Process a POST request
     if (req.method === "POST") {
-      const restaurant = {
-        name: "Advait's Burgers",
-        description: "Best burgers in town. Definitely not made of beans.",
-        lat: 43.496766,
-        lng: -79.872682,
-        rating: 3.4
+      const user = {
+        name: "Advait Raje",
+        username: "advait",
+        password: "advait",
+        parking_spots: [],
+        restaurants: [],
       };
-      const result = await db.collection("restaurants").insertOne(restaurant);
+      const result = await db.collection("users").insertOne(user);
       if (result.insertedId)
         res.json({
           message: `Successfully added document with id ${result.insertedId}`,
         });
       else
         res.json({
-          message: `Failed to add new restaurant.`,
+          message: `Failed to add new user.`,
         });
     }
-    
+
     // Process a POST request
     if (req.method === "GET") {
-      const restaurants = await db
-        .collection("restaurants")
+      const users = await db
+        .collection("users")
         .find({})
         .limit(10)
         .toArray();
 
-      res.json(restaurants);
+      res.json(users);
     }
   } catch (e) {
     console.error("We couldn't connect to the database.", e);

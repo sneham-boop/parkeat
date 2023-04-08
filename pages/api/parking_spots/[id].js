@@ -16,7 +16,7 @@ export default async function handler(req, res) {
 
     // Process a PUT request
     if (req.method === "PUT") {
-      const result = await db.collection("restaurants").findOneAndUpdate(
+      const result = await db.collection("parking_spots").findOneAndUpdate(
         {
           _id: new ObjectId(id),
         },
@@ -24,31 +24,31 @@ export default async function handler(req, res) {
           $set: { rating: 7 },
         }
       );
-      const { value: restaurant } = result;
-      if (restaurant)
+      const { value: parking_spot } = result;
+      if (parking_spot)
         res.json({
-          message: `Successfully updated restaurant with id ${restaurant._id}`,
+          message: `Successfully updated parking spot with id ${parking_spot._id}`,
         });
       else
         res.json({
-          message: `Failed to update details for this restaurant. ${id}`,
+          message: `Failed to update details for this parking spot. ${id}`,
         });
     }
 
     // Process a GET request
     if (req.method === "GET") {
-      const restaurant = await db
-        .collection("restaurants")
+      const parking_spot = await db
+        .collection("parking_spots")
         .find({ _id: new ObjectId(id) })
         .toArray();
 
-      res.json({ restaurant });
+      res.json({ parking_spot });
     }
 
     // Process a DELETE request
     if (req.method === "DELETE") {
       const result = await db
-        .collection("restaurants")
+        .collection("parking_spots")
         .deleteOne({ _id: new ObjectId(id) });
 
       if (result.deletedCount === 1) {
