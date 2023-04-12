@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./ShowPlaces.module.scss";
 import Image from "next/image";
+import Button from "../Button";
 
 export default function Place({ place, image }) {
   return (
@@ -23,6 +24,8 @@ export default function Place({ place, image }) {
         </h4>
         <p>Address: {place.vicinity}</p>
         <p>Rating: {place.rating}</p>
+        <Button btnText="Save"/>
+        <Button btnText="Remove"/>
       </div>
     </section>
   );

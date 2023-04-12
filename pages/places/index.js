@@ -8,7 +8,7 @@ export default function places(props) {
   return (
     <section className="places">
       <GoogleMap restaurants={restaurants} />
-      <ShowPlaces places={restaurants}/>
+      <ShowPlaces places={restaurants} />
     </section>
   );
 }
