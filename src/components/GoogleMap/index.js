@@ -71,7 +71,7 @@ export default function GoogleMap(props) {
 
   return (
     <div className={styles.mapContainer}>
-      <h2>Let's find some restaurants for you.</h2>
+      <h2>Let&apos;s find some restaurants for you.</h2>
       <div
         id={styles.map}
         style={{
