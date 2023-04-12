@@ -1,4 +1,4 @@
-export default async (req, res) => {
+export default async function handler (req, res) {
   const url = `https://maps.googleapis.com/maps/api/place/nearbysearch/json
 ?keyword=restaurants
 &location=${43.4933287}%2C${-79.8715537}
