@@ -54,7 +54,7 @@ export default function GoogleMap(props) {
     getAPIKey().then((key) => {
       setKey(key);
     });
-  }, []);
+  }, [getAPIKey]);
 
   // const handleApiLoaded = (map, maps) => {
   //   setMapAPILoaded(true);
