@@ -25,7 +25,7 @@ export default function Footer() {
         </span>
       </section>
       <p className={styles["coolers-text"]}>
-        Inspired by the parking experiences I've had as a midwestern gal living
+        Inspired by the parking experiences I&apos;ve had as a midwestern gal living
         in a big city
       </p>
     </footer>
