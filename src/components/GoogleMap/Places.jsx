@@ -1,15 +1,30 @@
 import Marker from "./Marker";
 import styles from "./GoogleMap.module.scss";
+import { useState } from "react";
 
 export default function Places({ map, data }) {
   // const [data, setData] = useState(placeData);
+  const [hover, setHover] = useState(null);
 
   const showPlaces = () => {
     return data.map((place, key) => {
+      // console.log(place.geometry.location);
       return (
-        <Marker key={key} map={map} position={place.geometry.location}>
-          <div className={styles.marker}>
-            <p>{place.name}</p>
+        <Marker
+          key={key}
+          map={map}
+          position={place.geometry.location}
+          onClick={() => console.log("I was clicked.")}
+        >
+          <div
+            className={`${styles.marker} ${hover === key ? styles.hover : ""}`}
+            onMouseEnter={() => setHover(key)}
+            onMouseLeave={() => setHover(null)}
+            onClick={() => console.log("I was clicked.", key)}
+          >
+            <p>
+              {key}. {place.name}
+            </p>
           </div>
         </Marker>
       );

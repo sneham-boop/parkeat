@@ -14,6 +14,7 @@ export default function Marker({ map, children, position }) {
         position,
         content: container,
       });
+      markerRef.current.addEventListener('gmp-click');
     }
   }, []);
 
