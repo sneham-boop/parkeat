@@ -19,7 +19,7 @@ export async function getServerSideProps() {
 &location=${43.4933287}%2C${-79.8715537}
 &radius=500
 &type=restaurant
-&key=${process.env.REACT_APP_MAP_API_KEY}`;
+&key=${process.env.NEXT_PUBLIC_MAP_API_KEY}`;
   try {
     const response = await fetch(url);
     const { results } = await response.json();
