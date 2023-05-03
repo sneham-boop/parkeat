@@ -15,7 +15,7 @@ const ShowPlaces = ({ places }) => {
   return (
     <div className={styles["places-container"]}>
       <h3>We found these for you!</h3>
-      {/* <div className={styles.places}>{places && displayPlaces(places)}</div> */}
+      <div className={styles.places}>{places && displayPlaces(places)}</div>
     </div>
   );
 };

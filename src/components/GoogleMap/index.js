@@ -16,8 +16,13 @@ const render = (status) => {
   }
 };
 
-export default function GoogleMapp() {
-  const defaultLocation = { lat: 43.6532, lng: -79.3832 };
+export default function GoogleMap({ restaurants }) {
+  const defaultLocation = { lat: 43.494735, lng: -79.871835 };
+  const [data, setData] = useState();
+
+  useEffect(() => {
+    setData(restaurants);
+  }, []);
 
   return (
     <>
@@ -28,7 +33,7 @@ export default function GoogleMapp() {
         libraries={["marker"]}
         render={render}
       >
-        <MyMap center={defaultLocation} zoom={15} />
+        <MyMap center={defaultLocation} zoom={15} data={data} />
       </Wrapper>
     </>
   );
@@ -43,7 +48,7 @@ const placeData = {
   },
   B: {
     name: "Bob's Bananas",
-    position: { lat: 43.629669,lng: -80.1018147 },
+    position: { lat: 43.629669, lng: -80.1018147 },
     rating: 4.5,
     cuisine: "American",
   },
@@ -77,13 +82,13 @@ function Marker({ map, children, position }) {
   }, [map, position, children]);
 }
 
-function Places({ map }) {
-  const [data, setData] = useState(placeData);
+function Places({ map, data }) {
+  // const [data, setData] = useState(placeData);
 
   const showPlaces = () => {
-    return Object.entries(data).map(([key, place]) => {
+    return data.map((place, key) => {
       return (
-        <Marker key={key} map={map} position={place.position}>
+        <Marker key={key} map={map} position={place.geometry.location}>
           <div className={styles.marker}>
             <p>{place.name}</p>
           </div>
@@ -91,19 +96,18 @@ function Places({ map }) {
       );
     });
   };
-
   return <>{showPlaces()}</>;
 }
 
-function MyMap({ center, zoom }) {
+function MyMap({ data, center }) {
   const ref = useRef();
   const [map, setMap] = useState();
-  const defaultLocation = { lat: 43.6532, lng: -79.3832 };
+  // const defaultLocation = { lat: 43.6532, lng: -79.3832 };
 
   const mapOptions = {
     mapId: process.env.NEXT_PUBLIC_MAP_ID,
-    center: defaultLocation,
-    zoom: 10,
+    center: center,
+    zoom: 16,
     disableDefaultUI: true,
   };
 
@@ -122,7 +126,7 @@ function MyMap({ center, zoom }) {
           height: "100vh",
         }}
       />
-      {map && <Places map={map} />}
+      {map && <Places map={map} data={data} />}
     </>
   );
 }
