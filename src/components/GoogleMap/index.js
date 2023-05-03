@@ -26,15 +26,17 @@ export default function GoogleMap({ restaurants }) {
 
   return (
     <>
-      <h2>Let&apos;s find some restaurants for you.</h2>
-      <Wrapper
-        apiKey={process.env.NEXT_PUBLIC_MAP_API_KEY}
-        version="beta"
-        libraries={["marker"]}
-        render={render}
-      >
-        <Map center={defaultLocation} zoom={15} data={data} />
-      </Wrapper>
+      <section className={styles.googleMap}>
+        <h2>Let&apos;s find some restaurants for you</h2>
+        <Wrapper
+          apiKey={process.env.NEXT_PUBLIC_MAP_API_KEY}
+          version="beta"
+          libraries={["marker"]}
+          render={render}
+        >
+          <Map center={defaultLocation} zoom={15} data={data} />
+        </Wrapper>
+      </section>
     </>
   );
 }

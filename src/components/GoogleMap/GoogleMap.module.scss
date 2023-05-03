@@ -1,11 +1,25 @@
 @import "../../sass/global";
 
-.mapContainer {
-  width: 100%;
+.googleMap {
+  // background-color: $black;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  h2 {
+    padding: 2em;
+    text-align: center;
+    font-size: $font-size-h3;
+    font-weight: $extra-bold;
+    // color: $white;
+  }
+}
+
+.mapContainer {
+  width: 80vw;
+  height: 100vh;
+  // border-radius: 0.375rem;
+  // overflow: hidden;
   .marker {
     padding: 0.5em 1em;
     border-radius: 0.375rem;

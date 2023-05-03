@@ -23,11 +23,6 @@ export default function Map({ data, center }) {
       <div
         className={styles.mapContainer}
         ref={ref}
-        id="map"
-        style={{
-          width: "100vw",
-          height: "100vh",
-        }}
       />
       {map && <Places map={map} data={data} />}
     </>
