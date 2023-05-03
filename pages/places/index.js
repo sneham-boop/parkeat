@@ -1,14 +1,9 @@
 import GoogleMap from "@component/src/components/GoogleMap";
 import ShowPlaces from "@component/src/components/ShowPlaces";
-import { useEffect } from "react";
 // import clientPromise from "../../lib/mongodb";
 
 export default function places(props) {
   const { restaurants } = props;
-
-  useEffect(() => {
-    console.log(restaurants);
-  }, []);
 
   return (
     <section className="places">
