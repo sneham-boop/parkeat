@@ -9,13 +9,10 @@ export default function Header(props) {
       <Link href="/">
         <Logo />
       </Link>
-      <div className={styles['nav-right-group']}>
-        <Link href="/">
-          <Button btnText={"Home"} />
-        </Link>
-        <Link href="/places">
-          <Button btnText={"Places"} />
-        </Link>
+      <div className={styles["nav-right-group"]}>
+        <Link href="/">Home</Link>
+        <Link href="#">|</Link>
+        <Link href="/places">Places</Link>
         {/* <Button btnText={btnText} onClick={handleClick} /> */}
       </div>
     </nav>
