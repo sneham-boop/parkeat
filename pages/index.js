@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Park&Eat</title>
+        <title>ParkEat</title>
         <meta
           name="description"
           content="Google maps project created with NextJS."
