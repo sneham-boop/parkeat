@@ -4,8 +4,9 @@
   // background-color: $black;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-end;
+  position: fixed;
+  width: 100vw;
   h2 {
     padding: 2em;
     text-align: center;
@@ -16,10 +17,11 @@
 }
 
 .mapContainer {
-  width: 80vw;
+  position: sticky;
+  top: -3em;
+  right: 0;
+  width: 50vw;
   height: 100vh;
-  // border-radius: 0.375rem;
-  // overflow: hidden;
   .marker {
     padding: 0.5em 1em;
     border-radius: 0.375rem;
