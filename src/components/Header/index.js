@@ -14,7 +14,7 @@ export default function Header(props) {
         <Link href="#">|</Link>
         <Link href="/places">Places</Link>
         <Link href="#">|</Link>
-        <Link as="a" href="https://github.com/sneham-boop/parkeat" target="_blank">Github</Link>
+        <Link href="https://github.com/sneham-boop/parkeat" target="_blank">Github</Link>
         {/* <Button btnText={btnText} onClick={handleClick} /> */}
       </div>
     </nav>

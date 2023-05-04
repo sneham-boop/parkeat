@@ -8,8 +8,8 @@ export default function places(props) {
   return (
     <section className="places">
       <GoogleMap restaurants={restaurants} parking={parking} />
-      <ShowPlaces places={restaurants} />
-      <ShowPlaces places={parking} />
+      {/* <ShowPlaces places={restaurants} />
+      <ShowPlaces places={parking} /> */}
     </section>
   );
 }

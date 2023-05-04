@@ -17,10 +17,11 @@
 }
 
 .mapContainer {
-  top: -3em;
-  right: 0;
-  width: 50vw;
+  // top: -3em;
+  // right: 0;
+  width: 100vw;
   height: 100vh;
+  z-index: -1;
   .marker {
     display: flex;
     flex-direction: row;
@@ -31,7 +32,7 @@
     border-radius: 0.375rem;
     color: $white;
     // background-color: $lightOrange;
-    z-index: 1000;
+    // z-index: 1000;
     // transition: width 0.7s;
     img{
       width: 2em;

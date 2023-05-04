@@ -1,13 +1,15 @@
 @import "../../sass/global";
 
 .nav {
+  position: fixed;
   width: 100vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.513);
   padding: 0.5em 1em;
+  z-index: 200;
   .logo {
     // width: 40%;
     display: flex;
@@ -35,7 +37,8 @@
     align-items: center;
     gap: 1em;
     padding-right: 2em;
+    color: $white;
     font-size: $font-size-p-sm;
-    font-weight: $extra-thin;
+    font-weight: $bold;
   }
 }
