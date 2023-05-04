@@ -8,6 +8,7 @@ const ShowPlaces = ({ places }) => {
       const { vicinity, rating, name, photos } = place;
       const placeInfo = { num: id + 1, vicinity, rating, name };
       let image = photos ? photos.slice(0)[0] : null;
+      // console.log(image)
       return <Place key={id} place={placeInfo} image={image} />;
     });
   };
