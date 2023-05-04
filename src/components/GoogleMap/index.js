@@ -16,12 +16,16 @@ const render = (status) => {
   }
 };
 
-export default function GoogleMap({ restaurants }) {
-  const defaultLocation = { lat: 43.494735, lng: -79.871835 };
-  const [data, setData] = useState();
+export default function GoogleMap({ restaurants, parking }) {
+  const defaultLocation = { lat: 43.642069, lng: -79.413747 };
+  const [restaurantData, setRestaurantData] = useState();
+  const [parkingData, setParkingData] = useState();
+  // const [data, setData] = useState();
 
   useEffect(() => {
-    setData(restaurants);
+    // console.log(restaurants)
+    setRestaurantData(restaurants);
+    setParkingData(parking);
   }, []);
 
   return (
@@ -34,7 +38,7 @@ export default function GoogleMap({ restaurants }) {
           libraries={["marker"]}
           render={render}
         >
-          <Map center={defaultLocation} zoom={15} data={data} />
+          <Map center={defaultLocation} zoom={15} data={restaurantData} parkingData={parkingData}/>
         </Wrapper>
       </section>
     </>
