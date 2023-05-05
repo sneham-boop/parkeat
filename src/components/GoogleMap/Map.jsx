@@ -18,6 +18,10 @@ export default function Map({ data, center, parkingData }) {
     setMap(new window.google.maps.Map(ref.current, mapOptions));
   }, []);
 
+  useEffect(()=>{
+    map && map.setCenter(center); 
+  },[center])
+
   return (
     <>
       <div
