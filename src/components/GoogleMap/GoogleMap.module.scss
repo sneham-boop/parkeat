@@ -31,7 +31,7 @@
     border-radius: 0.375rem;
     color: $white;
     width: 2em;
-    min-height: 2em;
+    min-height: 3em;
     animation-duration: 0.4s;
     animation-name: reduceSize;
     animation-timing-function: ease;
@@ -66,7 +66,7 @@
 @keyframes size {
   0% {
     width: 3em;
-    height: 2em;
+    height: 3em;
   }
   100% {
     width: 15em;
@@ -78,7 +78,7 @@
   }
   100% {
     width: 3em;
-    height: 2em;
+    height: 3em;
   }
 }
 
