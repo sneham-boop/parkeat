@@ -8,8 +8,6 @@ export default function places(props) {
   return (
     <section className="places">
       <GoogleMap restaurants={restaurants} parking={parking} />
-      {/* <ShowPlaces places={restaurants} />
-      <ShowPlaces places={parking} /> */}
     </section>
   );
 }
@@ -28,13 +26,13 @@ export async function getServerSideProps() {
 // &key=${process.env.NEXT_PUBLIC_MAP_API_KEY}`;
 
   try {
-    console.log("Links: ", getUrl("restaurant"), getUrl("parking"));
+    // console.log("Links: ", getUrl("restaurant"), getUrl("parking"));
     const restaurantsResponse = await fetch(getUrl("restaurant"));
     const { results: restaurantsResults } = await restaurantsResponse.json();
 
     const parkingResponse = await fetch(getUrl("parking"));
     const { results: parkingResults } = await parkingResponse.json();
-    console.log("Google Maps API response",restaurantsResults, parkingResults);
+    // console.log("Google Maps API response",restaurantsResults, parkingResults);
     return {
       props: {
         restaurants: JSON.parse(JSON.stringify(restaurantsResults)),

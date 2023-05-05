@@ -12,7 +12,7 @@ $font-size-p-lg: calc(18px + 0.8vw);
 $font-size-p-m: calc(16px + 0.5vw);
 $font-size-p-sm: calc(14px + 0.3vw);
 $font-size-p-xs: calc(8px + 0.3vw);
-$extra-thin: 200;
+$extra-thin: 100;
 $thin: 300;
 $medium: 500;
 $bold: 800;
@@ -32,6 +32,7 @@ $danger-red: #ef3c2d;
 $black: #080808;
 $lightgray: #c6c6c6;
 $lightgrayTransparent: rgb(198, 198, 198, 0.4);
+$darkTransperent: rgba(0, 0, 0, 0.513);;
 
 // Padding
 $padding-full-vw: 2em;

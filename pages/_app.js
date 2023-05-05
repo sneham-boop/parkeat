@@ -1,13 +1,14 @@
 import "@component/styles/globals.css";
 import Main from "@component/src/components/Main";
-import { Literata } from "next/font/google";
+import { Literata, Roboto } from "next/font/google";
 
-const work = Literata({ weight: [ "200", "400", "500", "800", "900"], subsets: ["latin"] });
+const roboto = Roboto({ weight: [ "100", "300", "400", "500", "700", "900"], subsets: ["latin"] });
+const lit = Literata({ weight: [ "200", "300", "400", "500", "700", "900"], subsets: ["latin"] });
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <main className={work.className}>
+      <main className={lit.className}>
         <Main>
           <Component {...pageProps} />
         </Main>

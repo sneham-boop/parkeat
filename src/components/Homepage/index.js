@@ -1,4 +1,7 @@
-import styles from './Homepage.module.scss'
+import styles from "./Homepage.module.scss";
+import { Roboto } from "next/font/google";
+
+const roboto = Roboto({ weight: [ "100"], subsets: ["latin"] });
 
 export default function Homepage() {
   // const user = { firstname: "Sneha", lastname: "Mahajan" };
@@ -7,10 +10,13 @@ export default function Homepage() {
       {/* {user ? (
         <h3>Welcome, {user.firstname}!</h3>
       ) : ( */}
-        <div className={styles.intro}>
-          <h3>Welcome to Park&EAT.</h3>
-          <p>Please log in to continue.</p>
-        </div>
+      <div className={styles.intro}>
+        <h3>this is Park&Eat.</h3>
+        <p className={roboto.className}>
+          Head over to the places page to see popular restuarants near you and
+          easily find a safe place to park your car.
+        </p>
+      </div>
       {/* )} */}
     </section>
   );
