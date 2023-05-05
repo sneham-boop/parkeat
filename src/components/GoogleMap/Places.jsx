@@ -33,7 +33,7 @@ export default function Places({ map, data, parkingData, you }) {
   };
   const showParkingPlaces = () => {
     return parkingData.map((place, key) => {
-      if (place.rating > 3.5) {
+      if (place.rating > 0) {
         return (
           <Marker
             key={place.place_id}

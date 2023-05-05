@@ -1,14 +1,14 @@
 import styles from "./Homepage.module.scss";
 import { Roboto } from "next/font/google";
-import { useState } from "react";
-import useCurrentLocation from "@component/src/hooks/useCurrentLocation";
+// import { useState } from "react";
+// import useCurrentLocation from "@component/src/hooks/useCurrentLocation";
 
 const roboto = Roboto({ weight: ["100"], subsets: ["latin"] });
 
 export default function Homepage() {
   // const user = { firstname: "Sneha", lastname: "Mahajan" };
-  const { location } = useCurrentLocation();
-  const [currentLocation, setCurrentLocation] = useState(location);
+  // const { location } = useCurrentLocation();
+  // const [currentLocation, setCurrentLocation] = useState(location);
   return (
     <section className={styles.home}>
       {/* {user ? (
