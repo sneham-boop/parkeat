@@ -2,7 +2,7 @@ import styles from "./Footer.module.scss";
 import Heart from "@mui/icons-material/FavoriteRounded";
 import { Roboto } from "next/font/google";
 
-const roboto = Roboto({ weight: [ "100"], subsets: ["latin"] });
+const roboto = Roboto({ weight: ["100"], subsets: ["latin"] });
 
 export default function Footer() {
   const btnText = "GO UP";
@@ -27,10 +27,6 @@ export default function Footer() {
           </a>
         </span>
       </section>
-      <p className={styles["coolers-text"]}>
-        Inspired by the experiences I&apos;ve had as a midwestern gal living
-        in a big city
-      </p>
     </footer>
   );
 }
