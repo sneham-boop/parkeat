@@ -1,5 +1,5 @@
 import GoogleMap from "@component/src/components/GoogleMap";
-import useCurrentLocation from "@component/src/hooks/useCurrentLocation";
+import useCurrentLocation from "../../src/hooks/useCurrentLocation";
 import { useEffect, useState } from "react";
 
 export default function places(props) {
