@@ -21,7 +21,7 @@ export default function Places({ map, data, parkingData, you }) {
             }`}
             onMouseEnter={() => setHover(place.place_id)}
             onMouseLeave={() => setHover(null)}
-            onClick={() => console.log("I was clicked.", place.place_id)}
+            onClick={() => setHover(place.place_id)}
             style={{ backgroundColor: "#FF8A65" }}
           >
             <img src="/restaurantIcon.svg"></img>
@@ -46,7 +46,7 @@ export default function Places({ map, data, parkingData, you }) {
               }`}
               onMouseEnter={() => setHover(place.place_id)}
               onMouseLeave={() => setHover(null)}
-              onClick={() => console.log("I was clicked.", place.place_id)}
+              onClick={() => setHover(place.place_id)}
               style={{ backgroundColor: "#242C2E" }}
             >
               <img src="/garageIcon.svg"></img>
@@ -71,7 +71,7 @@ export default function Places({ map, data, parkingData, you }) {
         }`}
         onMouseEnter={() => setHover(youID)}
         onMouseLeave={() => setHover(null)}
-        onClick={() => console.log("I was clicked.", youID)}
+        onClick={() => setHover(youID)}
         style={{ backgroundColor: "#2476EB" }}
       >
         <img src="/youIcon.svg"></img>
