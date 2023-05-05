@@ -24,7 +24,7 @@ export default function Map({ data, center, parkingData }) {
         className={styles.mapContainer}
         ref={ref}
       />
-      {map && <Places map={map} data={data} parkingData={parkingData} />}
+      {map && <Places map={map} data={data} parkingData={parkingData} you={center}/>}
     </>
   );
 }
