@@ -17,7 +17,7 @@ const render = (status) => {
 };
 
 export default function GoogleMap({ restaurants, parking }) {
-  const defaultLocation = { lat: 43.642069, lng: -79.413747 };
+  const defaultLocation = { lat: 43.655484, lng: -79.38611 };
   const [restaurantData, setRestaurantData] = useState();
   const [parkingData, setParkingData] = useState();
   // const [data, setData] = useState();

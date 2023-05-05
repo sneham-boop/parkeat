@@ -17,8 +17,6 @@
 }
 
 .mapContainer {
-  // top: -3em;
-  // right: 0;
   width: 100vw;
   height: 100vh;
   z-index: -1;
@@ -27,32 +25,18 @@
     flex-direction: row;
     gap: 1em;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     border-radius: 0.375rem;
     color: $white;
-    width: 3em;
+    width: 2em;
+    min-height: 3em;
     animation-duration: 0.4s;
     animation-name: reduceSize;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
-    &:hover {
-      animation-duration: 0.4s;
-      animation-name: size;
-      animation-timing-function: ease;
-      animation-fill-mode: forwards;
-    }
-    // :not(.active):hover {
-    //   animation-duration: 0.4s;
-    //   animation-name: reduceSize;
-    //   animation-timing-function: ease;
-    //   animation-fill-mode: forwards;
-    // }
-
-    // background-color: $lightOrange;
-    // z-index: 1000;
-    // transition: width 0.7s;
+    z-index: 999;
     img {
       width: 2em;
       height: 2em;
@@ -62,6 +46,19 @@
     span {
       font-size: $font-size-p-xs;
       font-weight: $extra-thin;
+      opacity: 0;
+      transition: visibility 0.4s, opacity 0.4s linear;
+    }
+    &:hover {
+      z-index: 1000;
+      animation-duration: 0.2s;
+      animation-name: size;
+      animation-timing-function: ease;
+      animation-fill-mode: forwards;
+    }
+    &:hover > span {
+      visibility: visible;
+      opacity: 1;
     }
   }
 }
@@ -69,21 +66,17 @@
 @keyframes size {
   0% {
     width: 3em;
-    // height: 5em;
   }
   100% {
     width: 15em;
-    // height: 20em;
   }
 }
 @keyframes reduceSize {
   0% {
     width: 15em;
-    // height: 5em;
   }
   100% {
     width: 3em;
-    // height: 20em;
   }
 }
 

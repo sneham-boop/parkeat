@@ -50,9 +50,9 @@ export default function Places({ map, data, parkingData }) {
             style={{ backgroundColor: "#242C2E" }}
           >
             <img src="/garageIcon.svg"></img>
-            {hover === place.place_id && (
+            {/* {hover === place.place_id && ( */}
               <span>{hover === place.place_id && place.name}</span>
-            )}
+            {/* )} */}
           </div>
         </Marker>
       );
