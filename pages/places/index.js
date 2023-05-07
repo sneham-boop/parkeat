@@ -8,7 +8,7 @@ export default function places(props) {
   const [currentLocation, setCurrentLocation] = useState(location);
 
   useEffect(() => {
-    console.log("I'm in useEffect for pages.", currentLocation, location);
+    // console.log("I'm in useEffect for pages.", currentLocation, location);
     setCurrentLocation(location);
   }, [location]);
   // console.log("Got location in pages",currentLocation, location);
