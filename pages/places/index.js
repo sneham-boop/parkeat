@@ -2,7 +2,7 @@ import GoogleMap from "@component/src/components/GoogleMap";
 import useCurrentLocation from "../../src/hooks/useCurrentLocation";
 import { useEffect, useState } from "react";
 
-export default function places(props) {
+export default function Places(props) {
   const { restaurants, parking } = props;
   const { location } = useCurrentLocation();
   const [currentLocation, setCurrentLocation] = useState(location);
