@@ -37,7 +37,7 @@ export default function Map() {
       };
       getPlacesData({ lat: latitude, lng: longitude });
       setMap(new window.google.maps.Map(ref.current, mapOptions));
-    });
+    },(e)=>console.log(e));
   }, []);
 
   return (
