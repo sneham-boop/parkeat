@@ -11,7 +11,7 @@ export default function Places(props) {
     // console.log("I'm in useEffect for pages.", currentLocation, location);
     setCurrentLocation(location);
   }, [location]);
-  // console.log("Got location in pages",currentLocation, location);
+  console.log("Got location in pages",currentLocation, location);
   return (
     <section className="places">
       <GoogleMap
