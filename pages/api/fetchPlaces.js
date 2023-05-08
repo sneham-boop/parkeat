@@ -9,7 +9,6 @@ export default async function handler (req, res) {
   try {
     const response = await fetch(url);
     const { results } = await response.json();
-    // console.log("Here's the data you received from Google Maps", data);
     res.json({places: results});
   } catch (e) {
     console.error(
