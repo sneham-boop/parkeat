@@ -10,7 +10,7 @@ export default function useCurrentLocation() {
       try {
         navigator.geolocation.getCurrentPosition(async (position) => {
           const inMemoryLocation = await getLocalStorage("parkEatlocation");
-          console.log(inMemoryLocation);
+          // console.log(inMemoryLocation);
           const { latitude, longitude } = position.coords;
           if (
             inMemoryLocation && inMemoryLocation.lat !== latitude &&

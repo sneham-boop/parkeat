@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
 import styles from "./GoogleMap.module.scss";
 import Map from "./Map";
-import useCurrentLocation from "@component/src/hooks/useCurrentLocation";
 
 const render = (status) => {
   switch (status) {
@@ -17,20 +16,7 @@ const render = (status) => {
   }
 };
 
-export default function GoogleMap({ restaurants, parking, currentLocation }) {
-  // const { location } = useCurrentLocation();
-  // const [currentLocation, setCurrentLocation] = useState(null);
-  // const defaultLocation =  currentLocation || {lat: 43.655484, lng: -79.38611 };
-  const [restaurantData, setRestaurantData] = useState();
-  const [parkingData, setParkingData] = useState();
-
-  useEffect(() => {
-    // console.log(restaurants)
-    // setCurrentLocation(location);
-    setRestaurantData(restaurants);
-    setParkingData(parking);
-  }, []);
-
+export default function GoogleMap() {
   return (
     <>
       <section className={styles.googleMap}>
@@ -40,12 +26,7 @@ export default function GoogleMap({ restaurants, parking, currentLocation }) {
           libraries={["marker"]}
           render={render}
         >
-          <Map
-            center={currentLocation}
-            zoom={15}
-            data={restaurantData}
-            parkingData={parkingData}
-          />
+          <Map />
         </Wrapper>
       </section>
     </>
