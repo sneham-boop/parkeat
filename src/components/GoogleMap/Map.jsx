@@ -5,11 +5,11 @@ import { useRef, useEffect, useState } from "react";
 export default function Map({ data, center, parkingData }) {
   const ref = useRef();
   const [map, setMap] = useState();
-  // const defaultLocation = { lat: 43.6532, lng: -79.3832 };
+  const defaultLocation = { lat: 43.655484, lng: -79.38611 };
 
   const mapOptions = {
     mapId: process.env.NEXT_PUBLIC_MAP_ID,
-    center: center,
+    center: center || defaultLocation,
     zoom: 14,
     disableDefaultUI: true,
   };
