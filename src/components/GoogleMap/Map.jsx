@@ -12,12 +12,23 @@ export default function Map() {
   const [restaurantData, setRestaurantData] = useState([]);
   const [parkingData, setParkingData] = useState([]);
 
+  const updateMapCenter = (loc) => {
+    setCenter(loc);
+    if (map) {
+      map.setCenter(loc);
+    }
+  };
+
+  useEffect(() => {
+    updateMapCenter(location);
+  }, [location]);
+
   useEffect(() => {
     const mapOptions = {
       mapId: process.env.NEXT_PUBLIC_MAP_ID,
       center: center,
       zoom: 14,
-      // disableDefaultUI: true,
+      disableDefaultUI: true,
     };
     setMap(new window.google.maps.Map(ref.current, mapOptions));
   }, []);
@@ -38,7 +49,7 @@ export default function Map() {
     };
 
     getPlacesData(location);
-  }, []);
+  }, [location]);
 
   return (
     <>
