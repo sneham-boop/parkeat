@@ -45,6 +45,9 @@
       opacity: 0;
       transition: visibility 0.4s, opacity 0.4s linear;
     }
+    &:focus {
+      outline: none;
+    }
     &:hover {
       z-index: 1000;
       animation-duration: 0.4s;

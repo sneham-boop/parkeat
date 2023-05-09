@@ -9,6 +9,7 @@ export default function Places({ map, data, parkingData, you }) {
   const showPlaces = () => {
     return data.map((place, key) => {
       // console.log(place.geometry.location);
+      let url = `https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}`;
       return (
         <Marker
           key={place.place_id}
@@ -26,6 +27,7 @@ export default function Places({ map, data, parkingData, you }) {
           >
             <img src="/restaurantIcon.svg"></img>
             {hover === place.place_id && <span>{place.name}</span>}
+            {hover === place.place_id && <a href={url} target="_blank">Open in Maps</a>}
           </div>
         </Marker>
       );
@@ -34,6 +36,7 @@ export default function Places({ map, data, parkingData, you }) {
   const showParkingPlaces = () => {
     return parkingData.map((place, key) => {
       if (place.rating > 0) {
+        let url = `https://www.google.com/maps/search/?api=1&query=${place.name}&query_place_id=${place.place_id}`;
         return (
           <Marker
             key={place.place_id}
@@ -51,6 +54,7 @@ export default function Places({ map, data, parkingData, you }) {
             >
               <img src="/garageIcon.svg"></img>
               <span>{hover === place.place_id && place.name}</span>
+              {hover === place.place_id && <a href={url} target="_blank">Open in Maps</a>}
             </div>
           </Marker>
         );
